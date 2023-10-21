@@ -34,6 +34,8 @@ class AuthUserHandlerArgumentResolver : HandlerMethodArgumentResolver {
         webRequest: NativeWebRequest,
         binderFactory: WebDataBinderFactory?
     ): Any? {
+
+        // 임시 AuthUser 더미
         return AuthUser(
             userId = 1,
             username = "Test",
