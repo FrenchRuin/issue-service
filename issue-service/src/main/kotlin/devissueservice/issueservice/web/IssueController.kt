@@ -32,18 +32,18 @@ class IssueController(
     fun getAll(
         authUser: AuthUser,
         @RequestParam(required = false, defaultValue = "TODO") status: IssueStatus,
-    )  = issueService.getAll(status)
+    ) = issueService.getAll(status)
 
     @GetMapping("/{id}")
     fun get(
         authUser: AuthUser,
-        @PathVariable id : Long,
+        @PathVariable id: Long,
     ) = issueService.get(id)
 
     @PutMapping("/{id}")
     fun edit(
         authUser: AuthUser,
-        @PathVariable id : Long,
+        @PathVariable id: Long,
         @RequestBody request: IssueRequest,
     ) = issueService.edit(authUser.userId, id, request)
 
@@ -51,7 +51,7 @@ class IssueController(
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(
         authUser: AuthUser,
-        @PathVariable id : Long,
+        @PathVariable id: Long,
     ) {
         issueService.delete(id)
     }
