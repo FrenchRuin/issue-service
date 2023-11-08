@@ -5,7 +5,6 @@ sealed class ServerException(
     override val message: String,
 ) : RuntimeException(message)
 
-
 // NotFound 에러 커스텀 처리
 data class NotFoundException(
     override val message: String,

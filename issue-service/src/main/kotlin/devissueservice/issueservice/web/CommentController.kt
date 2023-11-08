@@ -20,6 +20,7 @@ class CommentController(
     private val commentService: CommentService,
 ) {
 
+    // Issue 생성 Post
     @PostMapping
     fun create(
         authUser: AuthUser,
@@ -29,6 +30,7 @@ class CommentController(
         return commentService.create(issueId, authUser.userId, authUser.username, request)
     }
 
+    // Issue 수정 Put
     @PutMapping("/{id}")
     fun edit(
         authUser: AuthUser,
@@ -36,7 +38,7 @@ class CommentController(
         @RequestBody request: CommentRequest,
     ) = commentService.edit(id, authUser.userId, request)
 
-
+    // Issue 삭제 Delete
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(
@@ -45,6 +47,5 @@ class CommentController(
         @PathVariable id : Long,
     ) {
         commentService.delete(issueId, id, authUser.userId)
-
     }
 }
