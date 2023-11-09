@@ -8,5 +8,4 @@ data class JWTProperties(
     val subject: String,
     val expiresTime: Long,
     val secret: String,
-) {
-}
+)
